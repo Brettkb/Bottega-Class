@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>API Communication Demo</title>
+  </head>
+  <body>
+
+  </body>
+
+  <script>
+      class apiError extends error {
+          constructor(msg = ErrorConstructor(message?: string): Error
+          super(...params)
+      }
+      var request = new XMLHttpRequest();
+      request.open('GET', 'http://api.dailysmarty.com/posts', true);
+      request.onload = function() {
+          if (request.status >= 200 && request.status < 400) {
+              var data = JSON.parse(request.responseText);
+              console.log(data);
+          } else {
+              //Todo, ErrorHandler
+          }
+      }
+
+      request.send();
+</script>
+</html>
